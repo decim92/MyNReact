@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-
+import {View, StyleSheet} from 'react-native';
 import {goHome} from '../router/Router';
 
-export default class Initializer extends React.Component {
+type Props = {};
+export default class Initializer extends React.Component<Props> {
   async componentDidMount() {
     goHome();
   }

@@ -1,9 +1,12 @@
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
-// import {Navigation} from 'react-native-navigation';
-import {TMDB_URL} from 'react-native-dotenv';
+import {connect} from 'react-redux';
+import {doFetchTrendingMovies} from '../actions/home';
 
-export default class Home extends React.Component {
+// import {Navigation} from 'react-native-navigation';
+
+type Props = {};
+class Home extends React.Component<Props> {
   static get options() {
     return {
       topBar: {
@@ -15,14 +18,22 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
+    this.props.doFetchTrendingMovies();
     // do stuff while splash screen is shown
     // After having done stuff (such as async tasks) hide the splash screen
   }
 
   render() {
+    const {trendingMovies} = this.props;
     return (
       <View style={styles.container}>
         <Text>Hello from Home screen.</Text>
+        <Text>
+          Loading content...
+          {/* {trendingMovies !== undefined
+            ? JSON.stringify(trendingMovies)
+            : 'Loading content...'} */}
+        </Text>
         <Button onPress={this.logout} title="Sign Out" />
         <Button
           //   onPress={() => {
@@ -46,3 +57,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+const mapStateToProps = state => {
+  return {
+    trendingMovies: state.home.trendingMovies,
+  };
+};
+
+const mapDispatchToProps = {
+  doFetchTrendingMovies,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Home);
