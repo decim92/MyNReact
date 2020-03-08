@@ -11,7 +11,7 @@ export default (state = {}, action) => {
     case FETCH_TRENDING_MOVIES_SUCCESS:
       return {
         ...state,
-        trendingMovies: action.payload,
+        response: action.payload,
         loading: false,
       };
     case FETCH_TRENDING_MOVIES_ERROR:

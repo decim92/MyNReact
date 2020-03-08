@@ -1,7 +1,9 @@
 import React from 'react';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, StyleSheet, FlatList} from 'react-native';
 import {connect} from 'react-redux';
 import {doFetchTrendingMovies} from '../actions/home';
+import {getTrendingMovies} from '../selectors/home';
+import TrendingItemCard from '../views/cells/TrendingItemCard';
 
 // import {Navigation} from 'react-native-navigation';
 
@@ -19,31 +21,22 @@ class Home extends React.Component<Props> {
 
   componentDidMount() {
     this.props.doFetchTrendingMovies();
-    // do stuff while splash screen is shown
-    // After having done stuff (such as async tasks) hide the splash screen
   }
 
   render() {
     const {trendingMovies} = this.props;
     return (
       <View style={styles.container}>
-        <Text>Hello from Home screen.</Text>
-        <Text>
-          Loading content...
-          {/* {trendingMovies !== undefined
-            ? JSON.stringify(trendingMovies)
-            : 'Loading content...'} */}
-        </Text>
-        <Button onPress={this.logout} title="Sign Out" />
-        <Button
-          //   onPress={() => {
-          //     Navigation.push(this.props.componentId, {
-          //       component: {
-          //         name: 'Screen2',
-          //       },
-          //     });
-          //   }}
-          title="View next screen"
+        <FlatList
+          data={trendingMovies}
+          renderItem={({item}) => (
+            <TrendingItemCard
+              title={item.title}
+              overview={item.overview}
+              poster_image_url={item.poster_image_url}
+            />
+          )}
+          keyExtractor={item => `${item.id}`}
         />
       </View>
     );
@@ -53,14 +46,12 @@ class Home extends React.Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 });
 
 const mapStateToProps = state => {
   return {
-    trendingMovies: state.home.trendingMovies,
+    trendingMovies: getTrendingMovies(state),
   };
 };
 
