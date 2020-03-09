@@ -6,11 +6,12 @@ const getTrendingMovies = state => {
     return [];
   }
   return state.home.response.results.map(movie => {
-    movie.poster_image_url = `${TMDB_IMG_URL}/w500${
-      movie.poster_path
-    }?api_key=${TMDB_API_KEY}`;
+    movie.poster_image_url = builtTMDBImageUrlFromPath(movie.poster_path);
     return movie;
   });
 };
+
+const builtTMDBImageUrlFromPath = path =>
+  `${TMDB_IMG_URL}/w500${path}?api_key=${TMDB_API_KEY}`;
 
 export {getTrendingMovies};

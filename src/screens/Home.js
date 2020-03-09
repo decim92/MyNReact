@@ -13,7 +13,7 @@ class Home extends React.Component<Props> {
     return {
       topBar: {
         title: {
-          text: 'Home',
+          text: 'Trending Movies',
         },
       },
     };
@@ -23,6 +23,10 @@ class Home extends React.Component<Props> {
     this.props.doFetchTrendingMovies();
   }
 
+  onShowDetail = id => {
+    console.log(id);
+  };
+
   render() {
     const {trendingMovies} = this.props;
     return (
@@ -31,9 +35,11 @@ class Home extends React.Component<Props> {
           data={trendingMovies}
           renderItem={({item}) => (
             <TrendingItemCard
+              id={item.id}
               title={item.title}
               overview={item.overview}
               poster_image_url={item.poster_image_url}
+              onShowDetail={this.onShowDetail}
             />
           )}
           keyExtractor={item => `${item.id}`}
