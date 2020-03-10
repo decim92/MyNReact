@@ -3,7 +3,7 @@ import {
   doFetchTrendingMoviesSuccess,
   doFetchTrendingMoviesError,
 } from '../actions/home';
-import {fetchTrendingMovies} from '../api/home';
+import {fetchTrendingMovies} from '../api/imdb';
 
 function* handleFetchTrendingMovies(action) {
   try {

@@ -14,7 +14,7 @@ const TrendingItemCard: React.SFC<Props> = props => (
       <View style={styles.dataContainer}>
         <Image source={{uri: props.poster_image_url}} style={styles.image} />
         <View style={styles.basicDataContainer}>
-          <Text>{props.title}</Text>
+          <Text style={styles.title}>{props.title}</Text>
           <Button
             onPress={() => props.onShowDetail(props.id)}
             title="Show details"
@@ -63,6 +63,9 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
   },
   image: {width: 120, height: 180},
+  title: {
+    fontSize: 20,
+  },
 });
 
 export default TrendingItemCard;

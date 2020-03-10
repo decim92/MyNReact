@@ -25,6 +25,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const initialStore = {
   home: {},
+  movie_detail: {},
 };
 
 let store = createStore(persistedReducer, initialStore, applyMiddleware(saga));

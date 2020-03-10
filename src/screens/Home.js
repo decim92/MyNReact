@@ -5,9 +5,11 @@ import {doFetchTrendingMovies} from '../actions/home';
 import {getTrendingMovies} from '../selectors/home';
 import TrendingItemCard from '../views/cells/TrendingItemCard';
 
-// import {Navigation} from 'react-native-navigation';
+import {Navigation} from 'react-native-navigation';
 
-type Props = {};
+type Props = {
+  id: number,
+};
 class Home extends React.Component<Props> {
   static get options() {
     return {
@@ -24,7 +26,21 @@ class Home extends React.Component<Props> {
   }
 
   onShowDetail = id => {
-    console.log(id);
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: 'MovieDetail',
+        passProps: {
+          movie_id: id,
+        },
+        options: {
+          topBar: {
+            title: {
+              text: 'Detail',
+            },
+          },
+        },
+      },
+    });
   };
 
   render() {

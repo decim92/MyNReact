@@ -11,6 +11,13 @@ export function registerScreens() {
     store,
     persistor,
   );
+  Navigation.registerComponentWithRedux(
+    'MovieDetail',
+    () => require('../screens/MovieDetail').default,
+    Provider,
+    store,
+    persistor,
+  );
   Navigation.registerComponent(
     'Initializer',
     sc => require('../screens/Initializer').default,
