@@ -5,7 +5,7 @@ import {
 } from '../actions/home';
 import {fetchTrendingMovies} from '../api/imdb';
 
-function* handleFetchTrendingMovies(action) {
+function* handleFetchTrendingMovies() {
   try {
     const result = yield call(fetchTrendingMovies);
     if (result) {

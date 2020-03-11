@@ -1,10 +1,16 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
-import {doFetchMovieDetail} from '../actions/movie_detail';
-import {getMovieDetail} from '../selectors/movie_detail';
+import {doFetchMovieDetail, FetchMovieDetail} from '../actions/movie_detail';
+import {getMovieDetail, Movie} from '../selectors/movie_detail';
 
-type Props = {};
+export interface Props {
+  doFetchMovieDetail(id: number): FetchMovieDetail;
+  movie_id: number;
+  componentId: string;
+  movieDetail: Movie;
+}
+
 class MovieDetail extends React.Component<Props> {
   componentDidMount() {
     this.props.doFetchMovieDetail(this.props.movie_id);
@@ -36,7 +42,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: any) => {
   return {
     movieDetail: getMovieDetail(state),
   };

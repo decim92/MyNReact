@@ -217,11 +217,13 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
-  - ReactNativeNavigation (6.1.0):
+  - ReactNativeNavigation (6.1.2):
     - React
     - React-RCTImage
     - React-RCTText
   - RNLanguages (3.0.2):
+    - React
+  - RNLocalize (1.3.3):
     - React
   - RNVectorIcons (6.6.0):
     - React
@@ -257,6 +259,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
   - RNLanguages (from `../node_modules/react-native-languages`)
+  - RNLocalize (from `../node_modules/react-native-localize`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -317,6 +320,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-navigation"
   RNLanguages:
     :path: "../node_modules/react-native-languages"
+  RNLocalize:
+    :path: "../node_modules/react-native-localize"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   Yoga:
@@ -348,8 +353,9 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
-  ReactNativeNavigation: c0e82ff2a99ffc35d4c99046c97d1ff8674c2a33
+  ReactNativeNavigation: c356b87a81bd53b30908a2e1baf3466441e3372d
   RNLanguages: 962e562af0d34ab1958d89bcfdb64fafc37c513e
+  RNLocalize: 7ea191e47e1755d2ad48614a2e9d07d290abc58e
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 

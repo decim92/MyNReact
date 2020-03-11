@@ -3,8 +3,13 @@ import {
   FETCH_TRENDING_MOVIES_SUCCESS,
   FETCH_TRENDING_MOVIES_ERROR,
 } from '../constants/ActionTypes';
+import {HomeState} from '../types/index';
+import {FetchTrendingMoviesAction} from '../actions/home';
 
-export default (state = {}, action) => {
+export default (
+  state: HomeState = {},
+  action: FetchTrendingMoviesAction,
+): HomeState => {
   switch (action.type) {
     case FETCH_TRENDING_MOVIES:
       return state;

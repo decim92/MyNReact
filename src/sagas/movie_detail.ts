@@ -5,7 +5,7 @@ import {
 } from '../actions/movie_detail';
 import {fetchMovieDetail} from '../api/imdb';
 
-function* handleFetchMovieDetail(action) {
+function* handleFetchMovieDetail(action: any) {
   try {
     const result = yield call(fetchMovieDetail, action.payload);
     console.log(result);

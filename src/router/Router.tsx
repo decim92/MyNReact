@@ -1,26 +1,38 @@
+import React from 'react';
 import {Navigation} from 'react-native-navigation';
+import Home from '../screens/Home';
+import MovieDetail from '../screens/MovieDetail';
 import {Provider} from 'react-redux';
 import {store, persistor} from '../store';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import {PersistGate} from 'redux-persist/integration/react';
 
 export function registerScreens() {
-  Navigation.registerComponentWithRedux(
+  Navigation.registerComponent(
     'Home',
-    () => require('../screens/Home').default,
-    Provider,
-    store,
-    persistor,
+    () => props => (
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Home {...props} />
+        </PersistGate>
+      </Provider>
+    ),
+    () => Home,
   );
-  Navigation.registerComponentWithRedux(
+  Navigation.registerComponent(
     'MovieDetail',
-    () => require('../screens/MovieDetail').default,
-    Provider,
-    store,
-    persistor,
+    () => props => (
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <MovieDetail {...props} />
+        </PersistGate>
+      </Provider>
+    ),
+    () => MovieDetail,
   );
   Navigation.registerComponent(
     'Initializer',
-    sc => require('../screens/Initializer').default,
+    () => require('../screens/Initializer').default,
   );
 }
 

@@ -1,6 +1,7 @@
-import axios from 'react-native-axios';
+const axios = require('react-native-axios');
 import {TMDB_URL, TMDB_API_KEY} from 'react-native-dotenv';
 import {TRENDING_ENDPOINT, MOVIE_DETAIL_ENDPOINT} from '../constants/Endpoints';
+import {ObjectResponse} from '../types';
 
 const headers = () => {
   return {
@@ -17,14 +18,14 @@ const fetchTrendingMovies = () =>
       params: {api_key: TMDB_API_KEY},
       headers: headers(),
     })
-    .then(res => res.data);
+    .then((res: ObjectResponse) => res.data);
 
-const fetchMovieDetail = id =>
+const fetchMovieDetail = (id: number) =>
   axios
     .get(`${TMDB_URL}${MOVIE_DETAIL_ENDPOINT}/${id}`, {
       params: {api_key: TMDB_API_KEY},
       headers: headers(),
     })
-    .then(res => res.data);
+    .then((res: ObjectResponse) => res.data);
 
 export {fetchTrendingMovies, fetchMovieDetail};

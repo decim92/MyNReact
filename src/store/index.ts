@@ -13,7 +13,7 @@ const persistConfig = {
 
 const saga = createSagaMiddleware();
 
-const rootReducer = (state, action) => {
+const rootReducer = (state: any, action: any) => {
   //   if (action.type === RESET_APP_STATE) {
   //     storage.removeItem('persist:root')
   //     state = undefined

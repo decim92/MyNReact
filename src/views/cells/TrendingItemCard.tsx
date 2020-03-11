@@ -1,27 +1,28 @@
 import React from 'react';
 import {View, Text, Image, Button, StyleSheet} from 'react-native';
+import {TrendingMovie} from '../../selectors/home';
 
 type Props = {
-  title: string,
-  poster_image_url: string,
-  overview: string,
-  id: number,
-  onShowDetail: 'function',
+  item: TrendingMovie;
+  onShowDetail(id: number): void;
 };
 const TrendingItemCard: React.SFC<Props> = props => (
   <View style={styles.container}>
     <View style={styles.borderedContainer}>
       <View style={styles.dataContainer}>
-        <Image source={{uri: props.poster_image_url}} style={styles.image} />
+        <Image
+          source={{uri: props.item.poster_image_url}}
+          style={styles.image}
+        />
         <View style={styles.basicDataContainer}>
-          <Text style={styles.title}>{props.title}</Text>
+          <Text style={styles.title}>{props.item.title}</Text>
           <Button
-            onPress={() => props.onShowDetail(props.id)}
+            onPress={() => props.onShowDetail(props.item.id)}
             title="Show details"
           />
         </View>
       </View>
-      <Text style={styles.overview}>{props.overview}</Text>
+      <Text style={styles.overview}>{props.item.overview}</Text>
     </View>
   </View>
 );

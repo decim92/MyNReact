@@ -1,6 +1,13 @@
 import {builtTMDBImageUrlFromPath} from '../utils/imdb';
 
-const getMovieDetail = state => {
+export interface Movie {
+  poster_image_url?: string;
+  backdrop_image_url?: string;
+  poster_path?: string;
+  backdrop_path?: string;
+}
+
+const getMovieDetail = (state: any): Movie => {
   if (state.movie_detail.response === undefined) {
     return {};
   }

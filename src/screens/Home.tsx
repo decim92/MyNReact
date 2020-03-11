@@ -1,15 +1,18 @@
 import React from 'react';
 import {View, StyleSheet, FlatList} from 'react-native';
 import {connect} from 'react-redux';
-import {doFetchTrendingMovies} from '../actions/home';
-import {getTrendingMovies} from '../selectors/home';
+import {doFetchTrendingMovies, FetchTrendingMovies} from '../actions/home';
+import {getTrendingMovies, TrendingMovie} from '../selectors/home';
 import TrendingItemCard from '../views/cells/TrendingItemCard';
 
 import {Navigation} from 'react-native-navigation';
 
-type Props = {
-  id: number,
-};
+export interface Props {
+  doFetchTrendingMovies(): FetchTrendingMovies;
+  componentId: string;
+  trendingMovies: Array<TrendingMovie>;
+}
+
 class Home extends React.Component<Props> {
   static get options() {
     return {
@@ -25,7 +28,7 @@ class Home extends React.Component<Props> {
     this.props.doFetchTrendingMovies();
   }
 
-  onShowDetail = id => {
+  onShowDetail = (id: number) => {
     Navigation.push(this.props.componentId, {
       component: {
         name: 'MovieDetail',
@@ -50,13 +53,7 @@ class Home extends React.Component<Props> {
         <FlatList
           data={trendingMovies}
           renderItem={({item}) => (
-            <TrendingItemCard
-              id={item.id}
-              title={item.title}
-              overview={item.overview}
-              poster_image_url={item.poster_image_url}
-              onShowDetail={this.onShowDetail}
-            />
+            <TrendingItemCard item={item} onShowDetail={this.onShowDetail} />
           )}
           keyExtractor={item => `${item.id}`}
         />
@@ -71,7 +68,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: any) => {
   return {
     trendingMovies: getTrendingMovies(state),
   };

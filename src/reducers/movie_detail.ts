@@ -3,8 +3,13 @@ import {
   FETCH_MOVIE_DETAIL_SUCCESS,
   FETCH_MOVIE_DETAIL_ERROR,
 } from '../constants/ActionTypes';
+import {MovieDetailState} from '../types/index';
+import {FetchMovieDetailAction} from '../actions/movie_detail';
 
-export default (state = {}, action) => {
+export default (
+  state: MovieDetailState = {},
+  action: FetchMovieDetailAction,
+): MovieDetailState => {
   switch (action.type) {
     case FETCH_MOVIE_DETAIL:
       return state;
