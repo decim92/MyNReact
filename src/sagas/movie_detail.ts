@@ -8,7 +8,6 @@ import {fetchMovieDetail} from '../api/imdb';
 function* handleFetchMovieDetail(action: any) {
   try {
     const result = yield call(fetchMovieDetail, action.payload);
-    console.log(result);
     if (result) {
       yield put(doFetchMovieDetailSuccess(result));
     } else {

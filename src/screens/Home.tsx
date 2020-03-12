@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {doFetchTrendingMovies, FetchTrendingMovies} from '../actions/home';
 import {getTrendingMovies, TrendingMovie} from '../selectors/home';
 import TrendingItemCard from '../views/cells/TrendingItemCard';
+import {translate} from './../utils/i18n';
 
 import {Navigation} from 'react-native-navigation';
 
@@ -18,7 +19,7 @@ class Home extends React.Component<Props> {
     return {
       topBar: {
         title: {
-          text: 'Trending Movies',
+          text: translate('home.title', null),
         },
       },
     };
@@ -38,7 +39,7 @@ class Home extends React.Component<Props> {
         options: {
           topBar: {
             title: {
-              text: 'Detail',
+              text: translate('movie_detail.title', null),
             },
           },
         },

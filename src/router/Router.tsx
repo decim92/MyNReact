@@ -6,6 +6,7 @@ import {Provider} from 'react-redux';
 import {store, persistor} from '../store';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {PersistGate} from 'redux-persist/integration/react';
+import {setI18nConfig, translate} from './../utils/i18n';
 
 export function registerScreens() {
   Navigation.registerComponent(
@@ -38,6 +39,7 @@ export function registerScreens() {
 
 export const goHome = () =>
   Promise.all([MaterialIcons.getImageSource('home', 25)]).then(([homeIcon]) => {
+    setI18nConfig();
     Navigation.setRoot({
       root: {
         bottomTabs: {
@@ -54,7 +56,7 @@ export const goHome = () =>
                 ],
                 options: {
                   bottomTab: {
-                    text: 'Home',
+                    text: translate('home.tab_name', null),
                     icon: homeIcon,
                   },
                 },

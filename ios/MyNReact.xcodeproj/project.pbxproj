@@ -74,6 +74,7 @@
 		84DFB3415B8947F08266D666 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		8DDBF15E439D476D92FDD262 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		98A8DAE611524A70AAB555D3 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		A5B1D4502419D08300DA3CE0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BA3E1C8E8A9C2E394AEB4A4F /* Pods-MyNReactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNReactTests.release.xcconfig"; path = "Target Support Files/Pods-MyNReactTests/Pods-MyNReactTests.release.xcconfig"; sourceTree = "<group>"; };
 		BBB72E2663F462C215288112 /* libPods-MyNReact-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyNReact-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A945FA1BFFE0B61DBF6E3D /* Pods-MyNReact-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNReact-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-MyNReact-tvOSTests/Pods-MyNReact-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -351,6 +352,7 @@
 				English,
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
@@ -659,6 +661,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				13B07FB21A68108700A75B9A /* Base */,
+				A5B1D4502419D08300DA3CE0 /* es */,
 			);
 			name = LaunchScreen.xib;
 			path = MyNReact;

@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Image, Button, StyleSheet} from 'react-native';
 import {TrendingMovie} from '../../selectors/home';
+import {translate} from '../../utils/i18n';
 
 type Props = {
   item: TrendingMovie;
@@ -18,7 +19,7 @@ const TrendingItemCard: React.SFC<Props> = props => (
           <Text style={styles.title}>{props.item.title}</Text>
           <Button
             onPress={() => props.onShowDetail(props.item.id)}
-            title="Show details"
+            title={translate('trending_item_card.show_detail_button', null)}
           />
         </View>
       </View>

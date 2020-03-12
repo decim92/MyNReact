@@ -1,0 +1,12 @@
+{
+  "home": {
+    "title": "Películas de moda",
+    "tab_name": "Inicio"
+  },
+  "movie_detail": {
+    "title": "Detalle"
+  },
+  "trending_item_card": {
+    "show_detail_button": "Mostrar detalles"
+  }
+}

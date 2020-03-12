@@ -1,0 +1,12 @@
+{
+  "home": {
+    "title": "Trending Movies",
+    "tab_name": "Home"
+  },
+  "movie_detail": {
+    "title": "Detail"
+  },
+  "trending_item_card": {
+    "show_detail_button": "Show Details"
+  }
+}
