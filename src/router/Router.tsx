@@ -56,7 +56,7 @@ export const goHome = () =>
                 ],
                 options: {
                   bottomTab: {
-                    text: translate('home.tab_name', null),
+                    text: translate('home.tab_name'),
                     icon: homeIcon,
                   },
                 },

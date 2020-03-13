@@ -19,7 +19,7 @@ const TrendingItemCard: React.SFC<Props> = props => (
           <Text style={styles.title}>{props.item.title}</Text>
           <Button
             onPress={() => props.onShowDetail(props.item.id)}
-            title={translate('trending_item_card.show_detail_button', null)}
+            title={translate('trending_item_card.show_detail_button')}
           />
         </View>
       </View>

@@ -19,7 +19,7 @@ class Home extends React.Component<Props> {
     return {
       topBar: {
         title: {
-          text: translate('home.title', null),
+          text: translate('home.title'),
         },
       },
     };
@@ -39,7 +39,7 @@ class Home extends React.Component<Props> {
         options: {
           topBar: {
             title: {
-              text: translate('movie_detail.title', null),
+              text: translate('movie_detail.title'),
             },
           },
         },
