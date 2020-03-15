@@ -1,4 +1,10 @@
 {
+  "login": {
+    "title": "Login",
+    "username_placeholder": "Username",
+    "password_placeholder": "Password",
+    "button_title": "Log in"
+  },
   "home": {
     "title": "Trending Movies",
     "tab_name": "Home"

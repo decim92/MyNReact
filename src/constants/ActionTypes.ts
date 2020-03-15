@@ -15,3 +15,12 @@ export type FETCH_MOVIE_DETAIL_SUCCESS = typeof FETCH_MOVIE_DETAIL_SUCCESS;
 
 export const FETCH_MOVIE_DETAIL_ERROR = 'FETCH_MOVIE_DETAIL_ERROR';
 export type FETCH_MOVIE_DETAIL_ERROR = typeof FETCH_MOVIE_DETAIL_ERROR;
+
+export const LOGIN = 'LOGIN';
+export type LOGIN = typeof LOGIN;
+
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export type LOGIN_SUCCESS = typeof LOGIN_SUCCESS;
+
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+export type LOGIN_ERROR = typeof LOGIN_ERROR;

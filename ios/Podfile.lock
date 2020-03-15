@@ -18,6 +18,9 @@ PODS:
     - boost-for-react-native
     - DoubleConversion
     - glog
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
   - glog (0.3.5)
   - RCTRequired (0.61.5)
   - RCTTypeSafety (0.61.5):
@@ -221,6 +224,9 @@ PODS:
     - React
     - React-RCTImage
     - React-RCTText
+  - RealmJS (4.0.0-beta.0):
+    - GCDWebServer
+    - React
   - RNLanguages (3.0.2):
     - React
   - RNLocalize (1.3.3):
@@ -258,6 +264,7 @@ DEPENDENCIES:
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
+  - RealmJS (from `../node_modules/realm`)
   - RNLanguages (from `../node_modules/react-native-languages`)
   - RNLocalize (from `../node_modules/react-native-localize`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
@@ -266,6 +273,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - GCDWebServer
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -318,6 +326,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   ReactNativeNavigation:
     :path: "../node_modules/react-native-navigation"
+  RealmJS:
+    :path: "../node_modules/realm"
   RNLanguages:
     :path: "../node_modules/react-native-languages"
   RNLocalize:
@@ -333,6 +343,7 @@ SPEC CHECKSUMS:
   FBLazyVector: aaeaf388755e4f29cd74acbc9e3b8da6d807c37f
   FBReactNativeSpec: 118d0d177724c2d67f08a59136eb29ef5943ec75
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   RCTRequired: b153add4da6e7dbc44aebf93f3cf4fcae392ddf1
   RCTTypeSafety: 9aa1b91d7f9310fc6eadc3cf95126ffe818af320
@@ -354,6 +365,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
   ReactNativeNavigation: c356b87a81bd53b30908a2e1baf3466441e3372d
+  RealmJS: 842f543253faf3bd3b3ea50f70cfc87b516809b5
   RNLanguages: 962e562af0d34ab1958d89bcfdb64fafc37c513e
   RNLocalize: 7ea191e47e1755d2ad48614a2e9d07d290abc58e
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4

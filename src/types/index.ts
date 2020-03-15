@@ -9,6 +9,13 @@ export interface HomeState {
   message?: string;
 }
 
+export interface LoginState {
+  response?: ObjectResponse;
+  loading?: boolean;
+  error?: boolean;
+  message?: string;
+}
+
 export interface MovieDetailState {
   response?: ObjectResponse;
   loading?: boolean;

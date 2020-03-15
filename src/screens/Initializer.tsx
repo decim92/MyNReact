@@ -1,11 +1,19 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {goHome} from '../router/Router';
+import {connect} from 'react-redux';
+import {getIsLogged} from '../selectors/login';
+import {goHome, goLogIn} from '../router/Router';
 
-type Props = {};
-export default class Initializer extends React.Component<Props> {
+type Props = {
+  isLogged: boolean;
+};
+class Initializer extends React.Component<Props> {
   async componentDidMount() {
-    goHome();
+    if (this.props.isLogged) {
+      goHome();
+    } else {
+      goLogIn();
+    }
   }
 
   render() {
@@ -23,3 +31,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+const mapStateToProps = (state: any) => {
+  return {
+    isLogged: getIsLogged(state),
+  };
+};
+
+export default connect(mapStateToProps)(Initializer);
